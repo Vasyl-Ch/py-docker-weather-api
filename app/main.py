@@ -18,7 +18,7 @@ def get_weather() -> None:
     temp = data["current"]["temp_c"]
     condition = data["current"]["condition"]["text"]
     print(
-        "Performing request to Weather API for city Paris...\n"
+        f"Performing request to Weather API for city {CITY}...\n"
         f"{city}/{country} {time} "
         f"Weather: {temp} Celsius, {condition}"
     )
