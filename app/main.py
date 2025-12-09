@@ -4,12 +4,12 @@ import requests
 
 def get_weather() -> None:
     api_key = os.getenv("API_KEY")
-    CITY = "Paris"
     if not api_key:
         raise ValueError("API_KEY environment variable is not set")
-    WEATHER_API_URL  = "https://api.weatherapi.com/v1/current.json"
-    params = {"key": api_key, "q": CITY}
-    response = requests.get(WEATHER_API_URL , params=params)
+    weather_url = "https://api.weatherapi.com/v1/current.json"
+    city = "Paris"
+    params = {"key": api_key, "q": city}
+    response = requests.get(weather_url , params=params)
     data = response.json()
     city = data["location"]["name"]
     country = data["location"]["country"]
